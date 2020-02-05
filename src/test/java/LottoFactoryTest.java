@@ -15,8 +15,8 @@ public class LottoFactoryTest {
         Lotto lotto = LottoFactory.createLotto();
         //then
         assertThat(lotto.getNumbers().size()).isEqualTo(6);
-        assertThat(lotto.getBonusNumber() <= 45).isTrue();
-        assertThat(lotto.getBonusNumber() >= 1).isTrue();
+        assertThat(lotto.getNumbers().get(0) <= 45).isTrue();
+        assertThat(lotto.getNumbers().get(0) >= 1).isTrue();
 
     }
 
@@ -24,10 +24,9 @@ public class LottoFactoryTest {
     void 수동_로또_생성_테스트(){
         //given
         //when
-        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7);
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6);
         Lotto lotto = LottoFactory.createLotto(numbers);
         //then
         assertThat(lotto.getNumbers().size()).isEqualTo(6);
-        assertThat(lotto.getBonusNumber()).isEqualTo(7);
     }
 }

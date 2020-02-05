@@ -12,7 +12,7 @@ public class LottoFactory {
 
     public static Lotto createLotto() {
         List<Integer> randomNumbers = new ArrayList<>();
-        IntStream.range(0, 7)
+        IntStream.range(0, 6)
             .forEach(i -> randomNumbers.add(createRandomNumber()));
         return new Lotto(randomNumbers);
     }
@@ -21,7 +21,7 @@ public class LottoFactory {
         return new Lotto(numbers);
     }
 
-    private static Integer createRandomNumber(){
+    private static Integer createRandomNumber() {
         return RANDOM.nextInt(CRITERION) + 1;
     }
 }
